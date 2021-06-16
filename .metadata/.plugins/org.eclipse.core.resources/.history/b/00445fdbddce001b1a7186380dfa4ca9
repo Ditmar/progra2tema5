@@ -1,0 +1,23 @@
+package example1;
+
+import udp.SocketUdp;
+
+public class main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("APP SOCKET!");
+		SocketUdp socket = new SocketUdp("localhost", 3000);
+		socket.connect();
+		Boolean terminate = true;
+		while () {
+			
+		}
+		
+		socket.emmit("HOLA MUNDO", (String responseServer) -> {
+			System.out.println(responseServer);
+		});
+		//socket.disconnect();
+	}
+
+}

@@ -1,0 +1,46 @@
+package udp;
+
+import java.io.IOException;
+import java.net.DatagramPacket;
+import java.net.DatagramSocket;
+import java.net.InetAddress;
+import java.net.SocketException;
+import java.net.UnknownHostException;
+
+public class SocketUdp {
+	private DatagramSocket socket;
+	private String ip;
+	private Integer port;
+	private Boolean connected;
+	public SocketUdp(String ip, Integer port) {
+		this.ip = ip;
+		this.port = port;
+		this.connected = false;
+	}
+	public void connect() {
+		
+		try {
+			socket = new DatagramSocket();
+			this.connected = true;
+		} catch (SocketException e) {
+			this.connected = false;
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+	public void sendMsn(String msn) {
+		if (this.connected) {
+			
+			try {
+				byte[] bytes = msn.getBytes();
+				InetAddress host = InetAddress.getByName(this.ip);
+				DatagramPacket datagramPacket = new DatagramPacket(bytes, 0);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		}
+	}
+}

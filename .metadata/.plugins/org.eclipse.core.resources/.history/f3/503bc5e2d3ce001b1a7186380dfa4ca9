@@ -1,0 +1,11 @@
+package udp;
+
+import java.net.DatagramSocket;
+
+public class SocketUdp {
+	private DatagramSocket socket;
+	private String ip;
+	public SocketUdp(String ip, Integer port) {
+		
+	}
+}

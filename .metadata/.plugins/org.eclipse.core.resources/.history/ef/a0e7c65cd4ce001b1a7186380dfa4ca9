@@ -1,0 +1,27 @@
+package udp;
+
+import java.net.DatagramSocket;
+import java.net.SocketException;
+
+public class SocketUdp {
+	private DatagramSocket socket;
+	private String ip;
+	private Integer port;
+	private Boolean connected;
+	public SocketUdp(String ip, Integer port) {
+		this.ip = ip;
+		this.port = port;
+	}
+	public void connect() {
+		
+		try {
+			socket = new DatagramSocket();
+			this.connected = true;
+		} catch (SocketException e) {
+			this.connected = false;
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+}

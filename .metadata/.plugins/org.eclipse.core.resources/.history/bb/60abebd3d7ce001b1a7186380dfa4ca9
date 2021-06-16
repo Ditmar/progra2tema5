@@ -1,0 +1,39 @@
+package udp;
+
+import java.io.IOException;
+import java.net.DatagramPacket;
+import java.net.DatagramSocket;
+import java.net.SocketException;
+
+public class Server {
+	private Integer port;
+	private Boolean connected;
+	private DatagramSocket socket;
+	public Server(Integer port) {
+		this.port = port;
+		this.connected = false;
+	}
+	public void startServer() {
+		try {
+			socket = new DatagramSocket(this.port);
+			this.connected = true;
+			System.out.println("Server running in " + this.port);
+			byte[] buffer = new byte[1000];
+			while(this.connected) {
+				DatagramPacket request = new DatagramPacket(buffer, buffer.length);
+				socket.receive(request);
+				
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SocketException e) {
+			e.printStackTrace();	
+		}
+		
+	}
+	public void stopServer() {
+		this.connected = false;
+	}
+	
+}
