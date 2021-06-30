@@ -1,7 +1,0 @@
-package udp;
-
-public class SocketUdp {
-	public SocketUdp() {
-		
-	}
-}

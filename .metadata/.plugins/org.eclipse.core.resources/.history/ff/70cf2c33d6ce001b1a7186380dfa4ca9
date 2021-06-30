@@ -1,8 +1,0 @@
-package udp;
-
-public class Server {
-	private Integer port;
-	public Server(Integer port) {
-		this.port = port;
-	}
-}

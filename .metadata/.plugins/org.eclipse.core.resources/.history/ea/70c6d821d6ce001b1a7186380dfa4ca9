@@ -1,7 +1,0 @@
-package udp;
-
-public class Server {
-	public Server() {
-		
-	}
-}

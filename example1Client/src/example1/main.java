@@ -9,7 +9,7 @@ public class main {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		System.out.println("APP SOCKET!");
-		SocketUdp socket = new SocketUdp("localhost", 3000);
+		SocketUdp socket = new SocketUdp("192.168.0.106", 3000);
 		socket.connect();
 		Boolean terminate = false;
 		Scanner readData = new Scanner(System.in);

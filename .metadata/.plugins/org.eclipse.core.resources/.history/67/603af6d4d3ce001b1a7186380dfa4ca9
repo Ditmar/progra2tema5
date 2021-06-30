@@ -1,8 +1,0 @@
-package udp;
-
-public class SocketUdp {
-	
-	public SocketUdp(String ip, Integer port) {
-		
-	}
-}
